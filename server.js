@@ -5,18 +5,28 @@ import cors from "cors";
 
 const app = express();
 
+// 1. Define allowed origins for both development and production
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://chatdemo-8xv.pages.dev"
+];
+
+// 2. Configure Express CORS
 app.use(
   cors({
-    origin: "https://chatdemo-8xv.pages.dev",
+    origin: allowedOrigins,
+    credentials: true
   })
 );
 
 const server = http.createServer(app);
 
+// 3. Configure Socket.io CORS to match Express exactly
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
+    credentials: true
   },
 });
 
