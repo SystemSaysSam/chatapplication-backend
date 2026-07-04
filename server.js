@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://chatdemo-8xv.pages.dev",
   })
 );
 
@@ -144,5 +144,6 @@ io.on("connection", (socket) => {
 });
 
 server.listen(3000, () => {
-  console.log("Server running on render");
+  console.log("Server running on render ");
+  console.log("Server running on render ");
 });
