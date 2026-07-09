@@ -7,7 +7,7 @@ const app = express();
 
 // 1. Define allowed origins for both development and production
 const allowedOrigins = [
-  "http://localhost:5173",
+  "https://echo.madebysaksham.space/",
   "https://chatdemo-8xv.pages.dev"
 ];
 
